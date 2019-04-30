@@ -1,0 +1,217 @@
+/* 
+ * Custom User Interface
+ *
+ * A bit improvised and hard-coded modifications made on Vivaldi browser UI for a minimal experiance. 
+ * Append contents of this file to Vivaldi common.css stylesheet under /opt/vivaldi/resources/vivaldi/style
+ * or include with @import rule. This visual modifications works well with cVim addon from Chrome Store.
+ * For full vim-like experiance enable one-key shortcuts and set them as desired.
+ * Tested on Arch Linux and Vivaldi 2.1.
+ *
+ * Author: Artur Kunasz
+ * Author URI: https://arturkunasz.com
+ * GitHub: https://github.com/arathill
+ * Date: 2018-11-06
+ *
+ * Run Web Inspector for UI testing:
+ *	vivaldi-stable --debug-packed-apps --silent-debugger-extension-api
+ *
+ */
+
+#browser.linux,
+#browser.linux + div,
+#browser.linux + div + div,
+#browser.linux button,
+#browser.linux input,
+#browser.linux select,
+#browser.linux textarea {
+  font-family:"Hack Nerd Font", monospace;
+}
+
+#tabs-container {
+	padding:0 !important;
+	border:0;
+	height:22px !important;
+}
+.toolbar .button-toolbar {
+	height:auto;
+}
+.button-tabbar.newtab {
+	height:22px !important;
+	top:0 !important;
+	min-height:auto !important;
+}
+.button-tabbar.newtab svg {
+	width:12px !important;
+	height:12px !important;
+}
+.tab .tab-header {
+	flex:1 !important;
+	padding:0 !important;
+}
+.progress-indicator {
+	bottom:0;
+}
+.tab .favicon {
+	flex:0 0 22px !important;
+	height:22 !important;
+	background-size:12px !important;
+	padding:6px !important;
+}
+.tab-position .tab .favicon,
+.tab-position .tab .close {
+  min-width: 22px;
+  min-height: 22px;
+  animation: pop 16ms linear;
+}
+.toolbar-tabbar > .button-toolbar > button > svg,
+.toolbar-tabbar > .toolbar-group > .button-toolbar > button > svg,
+.toolbar-tabbar > .button-toolbar > button > img,
+.toolbar-tabbar > .toolbar-group > .button-toolbar > button > img {
+  flex: 0 1 22px;
+  height: 22px;
+  width: 22px;
+}
+.button-toolbar > button {
+  display: flex;
+  flex: 1 1 22px;
+  flex-basis: 100%;
+  min-width: 0;
+  background-color: transparent;
+  border: 1px solid var(--colorBorder);
+  border-radius: var(--radius);
+  color: inherit;
+  text-align: left;
+  height: 22px;
+  padding: 0 var(--padding);
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.toolbar-tabbar > .button-toolbar > button,
+.toolbar-tabbar > .toolbar-group > .button-toolbar > button {
+  background: transparent;
+  border: unset;
+  min-width: 22px;
+  min-height: 22px;
+  margin-top:8px;
+  padding: 0;
+  opacity: 0.6;
+}
+.tab .title {
+	height:22px;
+	font-size:12px;
+	font-family:"Hack Nerd Font", monospace;
+	line-height:22px !important;
+	padding-top:0;
+	padding-bottom:0;
+}
+.addressfield {
+	margin:0;
+	border:0;
+	height:22px !important;
+	padding:0;
+	background:transparent;
+}
+.toolbar-addressbar {
+	box-shadow:none !important;
+}
+
+.addressfield form input.url {
+	height:22px !important;
+	padding: 0 1em;
+	border: 0;
+	font-size: 11px;
+	display: block;
+	font-family:"Hack Nerd Font", monospace;
+}
+.sync-and-trash-container {
+	display:none !important;
+}
+.native .vivaldi {
+	height:22px !important;
+}
+.native .vivaldi .burger-icon svg {
+	height:14px !important;
+}
+.addressfield .addressfield-siteinfo {
+	height:22px !important;
+}
+.addressfield .addressfield-siteinfo .siteinfo-symbol > svg {
+	height:12px !important;
+}
+.addressfield .addressfield-siteinfo .siteinfo-symbol {
+	height:18px;
+}
+.address-bottom .urlSearch {
+	bottom:22px !important;
+	font-family:"Hack Nerd Font", monospace;
+}
+.button-toolbar.home { display: none }
+.button-toolbar.reload { display: none }
+.button-toolbar.back svg { height:12px; }  
+.button-toolbar.forward svg { height:12px; }  
+.toolbar-addressbar:after {
+	display: none !important;
+}
+.addressfield:focus-within,
+.searchfield:focus-within {
+	border-color: var(--colorAccentBgFadedMost);
+	box-shadow: 0 0 0 0px var(--colorAccentBgDark), 0 0 0 0px var(--colorAccentBgFadedMost) inset;
+}
+.extensions-wrapper > span {
+	display:flex;
+}
+.toolbar-mainbar > .button-toolbar > button > svg:first-child,
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button > svg:first-child,
+.toolbar-mainbar > .button-toolbar > button > img:first-child,
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button > img:first-child {
+  flex: 0 1 16px;
+  height: 16px;
+}
+.toolbar-mainbar > .button-toolbar > button,
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 0 solid rgba(0, 0, 0, 0);
+  border-radius: 0;
+  min-width: 22px;
+  color: inherit;
+  padding: 0;
+  height: 22px;
+  border-style: unset;
+  justify-content: center;
+}
+.color-behind-tabs-off .toolbar-mainbar {
+  box-shadow:0 !important;
+}
+.color-behind-tabs-off.address-bottom .toolbar-mainbar {
+  box-shadow: 0;
+}
+.button-toolbar.profile-popup {
+	display:none;
+}
+.address-bottom .toolbar-mainbar {
+  box-shadow: 0;
+}
+.address-bottom .toolbar-mainbar {
+  box-shadow: 0 0px var(--colorBorder) inset;
+}
+.color-behind-tabs-off.address-bottom .toolbar-mainbar {
+  box-shadow: 0 0px var(--colorAccentBgDark) inset;
+}
+.addressfield .pageload .pageload-indicator {
+  position: absolute;
+  width: auto;
+  height: 22px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  border-radius: var(--radius);
+  -webkit-appearance: none;
+  opacity: 0.25;
+  background-color: var(--colorAccentBg);
+  overflow: hidden;
+}
