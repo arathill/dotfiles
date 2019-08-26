@@ -74,23 +74,23 @@ source $ZSH/oh-my-zsh.sh
 # ###############
 # VIM keybindings & cursor
 # ###############
-zle-keymap-select () {
-        if [ $KEYMAP = vicmd ]; then
-            echo -ne "\033]12;Grey\007"
-			echo -ne '\e[1 q'
-        else
-            echo -ne "\033]12;Grey\007"
-			echo -ne '\e[5 q'
-        fi
-}
-zle -N zle-keymap-select
-zle-line-init () {
-    zle -K viins
-    echo -ne "\033]12;Grey\007"
-	echo -ne '\e[5 q'
-}
-zle -N zle-line-init
-bindkey -v
+#zle-keymap-select () {
+#        if [ $KEYMAP = vicmd ]; then
+#            echo -ne "\033]12;Grey\007"
+#			echo -ne '\e[1 q'
+#        else
+#            echo -ne "\033]12;Grey\007"
+#			echo -ne '\e[5 q'
+#        fi
+#}
+#zle -N zle-keymap-select
+#zle-line-init () {
+#    zle -K viins
+#    echo -ne "\033]12;Grey\007"
+#	echo -ne '\e[5 q'
+#}
+#zle -N zle-line-init
+#bindkey -v
 
 
 
