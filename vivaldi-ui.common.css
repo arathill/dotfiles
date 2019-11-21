@@ -1,4 +1,4 @@
-/* 
+/* **
  * Custom User Interface
  *
  * A bit improvised and hard-coded modifications made on Vivaldi browser UI for a minimal experiance. 
@@ -55,13 +55,16 @@
 	flex:0 0 22px !important;
 	height:22 !important;
 	background-size:12px !important;
-	padding:6px !important;
+	padding:3px !important;
 }
 .tab-position .tab .favicon,
 .tab-position .tab .close {
   min-width: 22px;
   min-height: 22px;
   animation: pop 16ms linear;
+}
+.tab-position .tab.active .tab-header .favicon {
+	filter:none !important;
 }
 .toolbar-tabbar > .button-toolbar > button > svg,
 .toolbar-tabbar > .toolbar-group > .button-toolbar > button > svg,
