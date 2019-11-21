@@ -59,6 +59,17 @@ set laststatus=2
 set termguicolors
 set background=dark
 
+" Cursor in TTY
+if &term == 'xterm-256color' || &term == 'screen-256color'
+    let &t_SI = "\<Esc>[5 q"
+    let &t_EI = "\<Esc>[1 q"
+endif
+
+if exists('$TMUX')
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+endif
+
 filetype off
 
 " -------------------------------------------------------------------------------------
@@ -153,6 +164,17 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 let NERDTreeDirArrowExpandable = " "
 let NERDTreeDirArrowCollapsible = " "
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg)
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' guibg='. a:bg .' guifg='. a:fg .' guibg='. a:bg .' guifg='. a:fg
+endfunction
+
+call NERDTreeHighlightFile('php', '#889999', 'none')
+call NERDTreeHighlightFile('html', '#faaadd', 'none')
+call NERDTreeHighlightFile('css', '#bbdd88', 'none')
+call NERDTreeHighlightFile('js', '#aa99bb', 'none')
 
 augroup nerdtreehidecwd
 	autocmd!
