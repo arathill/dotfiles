@@ -91,7 +91,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'xolox/vim-misc'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'StanAngeloff/php.vim'
+"Plugin 'StanAngeloff/php.vim'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
@@ -105,6 +105,8 @@ Plugin 'othree/html5.vim'
 Plugin 'eshion/vim-sync'
 Plugin 'mattn/emmet-vim'
 Plugin 'ap/vim-css-color'
+Plugin 'othree/csscomplete.vim'
+Plugin 'JulesWang/css.vim'
 "Plugin 'scrooloose/nerdcommenter'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vimwiki/vimwiki'
@@ -112,9 +114,14 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'ryanoasis/vim-devicons'
 "Plugin 'junegunn/limelight.vim'
 Plugin 'ervandew/supertab'
+"Plugin 'plasticboy/vim-markdown'
+
 
 call vundle#end()
 filetype plugin indent on
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+
 
 " -------------------------------------------------------------------------------------
 " 3. Plugins settings

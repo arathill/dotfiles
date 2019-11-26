@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arathill/.zsh"
-export TERM=xterm-color
+export TERM=xterm-256color
 export BROWSER=vivaldi-stable
 
 # Set name of the theme to load --- if set to "random", it will
@@ -123,6 +123,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+alias bc="bc -q"
 alias compressjpg="ls -1 *.jpg | xargs -n 1 bash -c 'convert \"\$0\" -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace sRGB \"\$0\"'"
 alias compresspng="ls -1 *.png | xargs -n 1 bash -c 'convert \"\$0\" -strip \"\$0\"'"
