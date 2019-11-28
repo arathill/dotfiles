@@ -3,12 +3,18 @@
 include-file = /home/arathill/.config/polybar/master.conf
 include-file = /home/arathill/.config/polybar/modules.conf
 
-; i3 Bars
-[bar/i3-bar]
+; Thinkpad config
+[bar/thinkpad]
 inherit = bar/master
-
-monitor = LVDS1
 
 modules-left   = start i3 zentimer title
 modules-center = 
 modules-right  = pkg coreuse memory volume battery network clock
+
+; Mac Pro config
+[bar/mac-pro]
+inherit = bar/master
+
+modules-left   = start i3 zentimer title
+modules-center = 
+modules-right  = pkg coreuse memory volume network clock
