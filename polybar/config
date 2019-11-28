@@ -9,6 +9,6 @@ inherit = bar/master
 
 monitor = LVDS1
 
-modules-left   = jgmenu i3 zentimer title
+modules-left   = start i3 zentimer title
 modules-center = 
 modules-right  = pkg coreuse memory volume battery network clock
